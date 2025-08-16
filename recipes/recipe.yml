@@ -13,9 +13,10 @@ modules:
 
   - type: dnf
     install:
-      - stunnel
-      - unbound
-      - podman-compose
+      packages:
+        - stunnel
+        - unbound
+        - podman-compose
 
   - type: signing
 
