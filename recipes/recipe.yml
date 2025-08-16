@@ -17,6 +17,7 @@ modules:
         - stunnel
         - unbound
         - podman-compose
+        - bind-utils
 
   - type: script
     scripts:
