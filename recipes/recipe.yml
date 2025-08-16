@@ -21,7 +21,7 @@ modules:
 
   - type: script
     scripts:
-    - enableunbound.sh
+    - enableservices.sh
 
   - type: signing
 
