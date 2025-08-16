@@ -1,0 +1,13 @@
+[Unit]
+Description=Bootstrap time synchronization
+Before=chronyd.service
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/sbin/chronyd -q 'server 162.159.200.123 iburst'
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
