@@ -18,5 +18,9 @@ modules:
         - unbound
         - podman-compose
 
+  - type: script
+    scripts:
+    - enableunbound.sh
+
   - type: signing
 
