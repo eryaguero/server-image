@@ -1,0 +1,26 @@
+
+[Unit]
+Description=Pi-hole container
+
+[Container]
+Image=pihole/pihole:2025.08.0
+Name=pihole
+
+# Port mappings
+PublishPort=53:53/tcp
+PublishPort=53:53/udp
+PublishPort=80:80/tcp
+PublishPort=443:443/tcp
+
+Volume=/etc/pihole:/etc/pihole:Z
+
+Secret=PIHOLE_ADMIN
+
+Environment=TZ=America/Los_Angeles
+Environment=WEBPASSWORD_FILE=/run/secrets/PIHOLE_ADMIN
+Environment=FTLCONF_dns_listeningMode=all
+
+Restart=always
+
+[Install]
+WantedBy=default.target
